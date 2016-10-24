@@ -1,9 +1,9 @@
-class apache::service{
-	service{'apache2':
-		ensure 			=> running,
+class apache::service($package){
+
+	service{ $package :
+		ensure 		=> running,
 		hasstatus 	=> true,
 		hasrestart 	=> true,
-		enable			=> true,
-		require     => Class['apache::install'],
+		enable		=> true,
 		}
 }
