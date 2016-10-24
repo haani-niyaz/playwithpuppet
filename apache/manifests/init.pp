@@ -35,7 +35,17 @@
 #
 # Copyright 2014 Your name here, unless otherwise noted.
 #
-class apache {
-	include apache::install
-	include apache::service
+class apache(
+	$package='httpd'
+	) {
+	
+	class { apache::install : 
+		package => $package,
+	}
+
+	class { apache::config: }
+
+	class { apache::service : 
+		package => $package,
+	}
 }
