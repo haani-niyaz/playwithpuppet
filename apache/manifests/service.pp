@@ -5,5 +5,5 @@ class apache::service($package){
 		hasstatus 	=> true,
 		hasrestart 	=> true,
 		enable		=> true,
-		}
+	}
 }
