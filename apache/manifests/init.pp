@@ -41,9 +41,10 @@ class apache(
 	
 	class { apache::install : 
 		package => $package,
-	}
+	} ->
 
-	class { apache::config: }
+	class { apache::config: 
+	} ~>
 
 	class { apache::service : 
 		package => $package,
