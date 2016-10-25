@@ -1,3 +1,6 @@
+# Vhost definitions only valid for Debian bases systems
+# This is an example only
+
 define apache::vhost($docroot,$port,$priority,$ssl=true,$serveraliases='',$template='apache/vhost.conf.erb'){
 	include apache
 
